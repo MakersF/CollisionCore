@@ -58,6 +58,13 @@ public class Transformation {
 		ty = yTranslation;
 	}
 
+	public Transformation(float xScale, float yScale, float pClockWiseRotationDegrees, float xTranslation, float yTranslation) {
+		setToIdentity();
+		setToScale(xScale, yScale);
+		postRotate(pClockWiseRotationDegrees);
+		postTranslate(xTranslation, yTranslation);
+	}
+
 	// ===========================================================
 	// Getter & Setter
 	// ===========================================================
