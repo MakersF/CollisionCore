@@ -1,4 +1,4 @@
-package com.makersf.frameworks.collisioncore.pixelperfect;
+package com.makersf.frameworks.shared.collisioncore.pixelperfect;
 
 /**
  * <p>This class is basically a java-space replacement for the native {@link android.graphics.Matrix} class.</p>

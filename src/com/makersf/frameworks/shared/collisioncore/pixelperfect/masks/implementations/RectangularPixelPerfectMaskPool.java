@@ -1,6 +1,6 @@
-package com.makersf.frameworks.collisioncore.pixelperfect.masks.implementations;
+package com.makersf.frameworks.shared.collisioncore.pixelperfect.masks.implementations;
 
-import com.makersf.frameworks.collisioncore.utils.GenericPool;
+import com.makersf.frameworks.shared.collisioncore.utils.GenericPool;
 
 /**
  * 

@@ -1,8 +1,8 @@
-package com.makersf.frameworks.collisioncore.pixelperfect.masks.factory;
+package com.makersf.frameworks.shared.collisioncore.pixelperfect.masks.factory;
 
 import java.nio.ByteBuffer;
 
-import com.makersf.frameworks.collisioncore.pixelperfect.masks.IPixelPerfectMask;
+import com.makersf.frameworks.shared.collisioncore.pixelperfect.masks.IPixelPerfectMask;
 
 public interface IPixelPerfectMaskFactory {
 

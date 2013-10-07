@@ -1,4 +1,4 @@
-package com.makersf.frameworks.collisioncore.utils;
+package com.makersf.frameworks.shared.collisioncore.utils;
 
 import java.util.ArrayList;
 import java.util.Collections;

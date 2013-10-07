@@ -1,25 +1,25 @@
-package com.makersf.frameworks.collisioncore.utils;
+package com.makersf.frameworks.shared.collisioncore.utils;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.nio.ByteBuffer;
 
-import com.makersf.frameworks.collisioncore.pixelperfect.masks.IPixelPerfectMask;
-import com.makersf.frameworks.collisioncore.pixelperfect.masks.factory.IPixelPerfectMaskFactory;
-import com.makersf.frameworks.collisioncore.pixelperfect.masks.factory.PixelPerfectMaskFactory;
+import com.makersf.frameworks.shared.collisioncore.pixelperfect.masks.IPixelPerfectMask;
+import com.makersf.frameworks.shared.collisioncore.pixelperfect.masks.factory.IPixelPerfectMaskFactory;
+import com.makersf.frameworks.shared.collisioncore.pixelperfect.masks.factory.PixelPerfectMaskFactory;
 
 public class MaskIO {
 	private static final int HEADER_INTESTATION = ('M' << 24) | ('A' << 16) | ('S' << 8) | ('K');
 	private static final int BITS_PER_BYTE = 8;
 	private static final int BYTES_PER_INT = 4;
 
-	public static void writeMask(IPixelPerfectMask pMask, File pFile) throws IOException {
-		FileOutputStream fos = new FileOutputStream(pFile);
-		DataOutputStream dos = new DataOutputStream(fos);
+	public static void writeMask(IPixelPerfectMask pMask, OutputStream pOutputStream) throws IOException {
+		DataOutputStream dos = new DataOutputStream(pOutputStream);
 
 		ByteBuffer byteBuffer = ByteBuffer.allocate(pMask.getWidth() * pMask.getHeight() / BITS_PER_BYTE + 4 * BYTES_PER_INT);
 		byteBuffer.position(0);
@@ -55,9 +55,8 @@ public class MaskIO {
 		dos.close();
 	}
 
-	public static IPixelPerfectMask readMask(File pFile, IPixelPerfectMaskFactory pFactory) throws IOException {
-		FileInputStream fis = new FileInputStream(pFile);
-		DataInputStream dis = new DataInputStream(fis);
+	public static IPixelPerfectMask readMask(InputStream pInputStream, IPixelPerfectMaskFactory pFactory) throws IOException {
+		DataInputStream dis = new DataInputStream(pInputStream);
 	
 		final int headerIntestation = dis.readInt();
 		if(headerIntestation != HEADER_INTESTATION) {
@@ -83,7 +82,11 @@ public class MaskIO {
 		return pFactory.getIPixelPerfectMask(width, height, byteBuffer);
 	}
 
+	public static IPixelPerfectMask readMask(InputStream pInputStream) throws IOException {
+		return readMask(pInputStream, new PixelPerfectMaskFactory());
+	}
+
 	public static IPixelPerfectMask readMask(File pFile) throws IOException {
-		return readMask(pFile, new PixelPerfectMaskFactory());
+		return readMask(new FileInputStream(pFile), new PixelPerfectMaskFactory());
 	}
 }

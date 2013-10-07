@@ -1,4 +1,4 @@
-package com.makersf.frameworks.collisioncore.pixelperfect;
+package com.makersf.frameworks.shared.collisioncore.pixelperfect;
 
 public interface IShape {
 	/**

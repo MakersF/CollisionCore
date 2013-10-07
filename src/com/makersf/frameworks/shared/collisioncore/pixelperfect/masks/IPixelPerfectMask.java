@@ -1,4 +1,4 @@
-package com.makersf.frameworks.collisioncore.pixelperfect.masks;
+package com.makersf.frameworks.shared.collisioncore.pixelperfect.masks;
 
 /**
  * 

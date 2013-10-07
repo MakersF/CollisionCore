@@ -1,6 +1,6 @@
-package com.makersf.frameworks.collisioncore.pixelperfect.masks.implementations;
+package com.makersf.frameworks.shared.collisioncore.pixelperfect.masks.implementations;
 
-import com.makersf.frameworks.collisioncore.pixelperfect.masks.IPixelPerfectMask;
+import com.makersf.frameworks.shared.collisioncore.pixelperfect.masks.IPixelPerfectMask;
 
 /**
  * 
@@ -27,7 +27,7 @@ public class BitmapPixelPerfectMask implements IPixelPerfectMask {
 
 		for(int x = 0; x < bitmaskWidth; x++) {
 			for(int y = 0; y < bitmaskHeight; y++) {
-				mBitsBlock[x][bitmaskHeight - y - 1] = ((bitmap.getPixel(X + x, Y + y) >> 24) & 0x000000FF) > pAlphaThreshold;
+				mBitsBlock[x][y] = ((bitmap.getPixel(X + x, Y + y) >> 24) & 0x000000FF) > pAlphaThreshold;
 			}
 		}
 	}

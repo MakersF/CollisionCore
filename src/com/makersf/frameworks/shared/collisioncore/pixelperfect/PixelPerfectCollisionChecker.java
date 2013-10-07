@@ -1,6 +1,6 @@
-package com.makersf.frameworks.collisioncore.pixelperfect;
+package com.makersf.frameworks.shared.collisioncore.pixelperfect;
 
-import com.makersf.frameworks.collisioncore.pixelperfect.masks.IPixelPerfectMask;
+import com.makersf.frameworks.shared.collisioncore.pixelperfect.masks.IPixelPerfectMask;
 
 /**
  * 
