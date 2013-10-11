@@ -18,7 +18,10 @@ public class BufferedImageBitmapAdpater implements IBitmap {
 	}
 
 	@Override
-	public int getPixel(int x, int y) {
+	public int getPixel(int offsetX, int offsetY, int baseX, int baseY,
+			int width, int height) {
+		int y = baseY + offsetY;
+		int x = baseX + offsetX;
 		return mPixelColors[y * mScanSize + x];
 	}
 }

@@ -27,7 +27,7 @@ public class BitmapPixelPerfectMask implements IPixelPerfectMask {
 
 		for(int x = 0; x < bitmaskWidth; x++) {
 			for(int y = 0; y < bitmaskHeight; y++) {
-				mBitsBlock[x][y] = ((bitmap.getPixel(X + x, Y + y) >> 24) & 0x000000FF) > pAlphaThreshold;
+				mBitsBlock[x][y] = ((bitmap.getPixel(x, y, X, Y, bitmaskWidth, bitmaskHeight) >> 24) & 0x000000FF) > pAlphaThreshold;
 			}
 		}
 	}
