@@ -44,4 +44,4 @@ The shape and the mask are decoupled because this is supposed to be a framework 
 
 ####Example Code for AndEngine Bindings
 
-The example code can be seen in the testing project at [CollisionTest].(https://github.com/MakersF/CollisionTest)
+The example code can be seen in the testing project at [CollisionTest](https://github.com/MakersF/CollisionTest).
