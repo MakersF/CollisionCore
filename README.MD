@@ -1,4 +1,4 @@
-#**Collision Core**
+# **Collision Core**
 
 
 Collision Core is a simple, lightweight, optimized Java 2D collision library.
